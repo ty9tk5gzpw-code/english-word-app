@@ -19,7 +19,7 @@ const words = [
   { english: "describe", japanese: "述べる、説明する" },
   { english: "involve", japanese: "関与させる" },
   { english: "reduce", japanese: "減らす" }
-];  
+];
 
 let currentIndex = 0;
 let score = 0;
@@ -29,7 +29,6 @@ let answered = false;
 let wrongWords = [];
 let questionOrder = [];
 
-// 答えを見る
 document.getElementById("answerButton").onclick = function() {
   let wordIndex;
 
@@ -43,7 +42,6 @@ document.getElementById("answerButton").onclick = function() {
     words[wordIndex].japanese;
 };
 
-// 次の単語
 document.getElementById("nextButton").onclick = function() {
   currentIndex = currentIndex + 1;
 
@@ -77,7 +75,6 @@ document.getElementById("nextButton").onclick = function() {
   document.getElementById("answer").textContent = "";
 };
 
-// 正解
 document.getElementById("correctButton").onclick = function() {
   if (answered === false) {
     score = score + 1;
@@ -94,7 +91,6 @@ document.getElementById("correctButton").onclick = function() {
   }
 };
 
-// 不正解
 document.getElementById("wrongButton").onclick = function() {
   if (answered === false) {
     wrongCount = wrongCount + 1;
@@ -121,7 +117,6 @@ document.getElementById("wrongButton").onclick = function() {
   }
 };
 
-// もう一度やる
 document.getElementById("restartButton").onclick = function() {
   currentIndex = 0;
   score = 0;
@@ -144,7 +139,6 @@ document.getElementById("restartButton").onclick = function() {
     "正解率：0%";
 };
 
-// ランダム
 document.getElementById("randomButton").onclick = function() {
   questionOrder = [];
 
@@ -174,7 +168,6 @@ document.getElementById("randomButton").onclick = function() {
     "正解率：0%";
 };
 
-// 順番通り
 document.getElementById("normalButton").onclick = function() {
   questionOrder = [];
 
@@ -198,7 +191,6 @@ document.getElementById("normalButton").onclick = function() {
     "正解率：0%";
 };
 
-// ランダム10問
 document.getElementById("random10Button").onclick = function() {
   questionOrder = [];
 
@@ -230,7 +222,6 @@ document.getElementById("random10Button").onclick = function() {
     "正解率：0%";
 };
 
-// 間違えた単語を復習
 document.getElementById("reviewButton").onclick = function() {
   if (wrongWords.length === 0) {
     document.getElementById("word").textContent =
