@@ -260,4 +260,3 @@ document.getElementById("reviewButton").onclick = function() {
   document.getElementById("accuracy").textContent =
     "正解率：0%";
 };
-<script src="script.js"></script>
